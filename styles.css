@@ -1,0 +1,22 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.container{
+    margin-top: 50%;
+    margin-left: 50%;
+}
+
+.calculadora{
+    padding: 10px;
+    border: 1px black solid;
+    border-radius: 10px;
+}
+
+.calculo{
+    background-color: antiquewhite;
+}
+
+.tecla{
+
+}
