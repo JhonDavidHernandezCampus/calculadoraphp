@@ -1,16 +1,20 @@
 <?php
 session_start();
 
+/* session_unset();
+session_destroy();
+session_start(); */
+
 /* $operacion = '(2+2)';
 
 $resultado = eval("return $operacion;");
  */
 
-
 $_SESSION['valor'][] = $_POST['numero'];
-$num = $_POST['numero'];
 $cadena = implode('', $_SESSION['valor']);
 
+$num = $_POST['numero'];
+/* 
 if($num != "=" || $num != "<" || $num !="c"){
     if(is_numeric($num) || $num == "(" || $num == ")" ){
 
@@ -25,7 +29,42 @@ if($num != "=" || $num != "<" || $num !="c"){
 }
 
     $cadena = implode('', $_SESSION['valor']);
-var_dump( $_SESSION['valor']);
+var_dump( $_SESSION['valor']); */
+$resultado =0;
+if($num == "=" || $num == "ce" || $num =="c"){
+    echo "antes del swich   --";
+    switch($num){
+        case "=":
+            echo "dentro =";
+            $resultado = eval("return $cadena;");
+            break;
+        case "ce":
+            echo "dentro ce";
+            echo var_dump($_SESSION["valor"])."antes<br>";
+
+
+
+            array_pop($_SESSION["valor"]);
+            array_pop($_SESSION["valor"]);
+
+
+
+            echo var_dump($_SESSION["valor"])."despues";
+            break;
+        case "c";
+            echo "dentro c";
+            $_SESSION['valor'] = array();
+            $cadena = implode('', $_SESSION['valor']);
+
+
+            break;
+    }
+}else{
+
+}
+var_dump($_SESSION['valor']);
+
+
 /*
 //var_dump($_SERVER)."<br>";
  */
@@ -44,10 +83,10 @@ var_dump( $_SESSION['valor']);
 </head>
 <body>
     <section class="container">
-        <div class="resultado"><?php echo $cadena ."=". $igual;?></div>
+        <div class="resultado"><?php  echo $cadena;?></div>
         <form action="" method="POST">
-            <input type="text" class="pintar" value="<?php echo $resultado ?>"><br>
-            <input type="submit" class="numero" name="numero" value="<">
+            <input type="text" class="pintar" value="<?php echo $resultado; ?>"><br>
+            <input type="submit" class="numero" name="numero" value="ce">
             <input type="submit" class="numero"name="numero" value="(">
             <input type="submit" class="numero"name="numero" value=")">
             <input type="submit" class="numero"name="numero" value="mod">
@@ -66,7 +105,7 @@ var_dump( $_SESSION['valor']);
             <input type="submit" class="numero"name="numero" value="2">
             <input type="submit" class="numero"name="numero" value="3">
             <input type="submit" class="numero"name="numero" value="-">
-            <input type="submit" class="igual" name="igual"value="="><br>
+            <input type="submit" class="igual" name="numero" value="="><br>
             <input type="submit" class="numero"name="numero" value="0">
             <input type="submit" class="numero"name="numero" value=",">
             <input type="submit" class="numero"name="numero" value="+">
