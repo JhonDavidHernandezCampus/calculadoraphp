@@ -1,0 +1,3 @@
+Se crea una calculadora con validacion usando eval ya que utiliza para ejecutar código PHP almacenado en una cadena, es decir 
+
+Cuando se llama a la función "eval()", el código PHP contenido en la  cadena se compila y se ejecuta como si fuera parte del programa  principal.  aun que esto puede ser muy peligroso por que es poco seguro ya que es un ejemplo de prueba y estoy relaizando las validacion para organisar la cadena que se le pasa como parametro a la funcion

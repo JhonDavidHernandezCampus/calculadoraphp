@@ -42,7 +42,7 @@ if($num == "=" || $num == "ce" || $num =="c"){
 }else{
     //echo "dentra qui?";
 }
-var_dump($_SESSION['valor']);
+//var_dump($_SESSION['valor']);
 
 
 ?>
@@ -65,7 +65,7 @@ var_dump($_SESSION['valor']);
             <input type="submit" class="numero" name="numero" value="ce">
             <input type="submit" class="numero"name="numero" value="(">
             <input type="submit" class="numero"name="numero" value=")">
-            <input type="submit" class="numero"name="numero" value="mod">
+            <input type="submit" class="numero"name="numero" value="%">
             <input type="submit" class="numero"name="numero" value="c"><br>
             <input type="submit" class="numero"name="numero" value="7">
             <input type="submit" class="numero"name="numero" value="8">
